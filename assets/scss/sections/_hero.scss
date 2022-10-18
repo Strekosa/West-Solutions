@@ -1,0 +1,116 @@
+.hero {
+  &__main {
+    width: 100%;
+   @include adaptiv-height(1000,375);
+  }
+
+  &__image {
+
+
+    overflow: hidden;
+    @media screen and (max-width: 1024px) {
+
+    }
+
+  }
+
+  &__text {
+    max-width: 920px;
+    padding: 0 35px;
+
+    &-subtitle {
+      font-family: 'Kaushan Script', cursive;
+      color: $main-color;
+      text-transform: capitalize;
+      @include adaptiv-margin-bottom(20, 15);
+      @include adaptiv-font(72, 30);
+      @include adaptiv-line-height(72, 30);
+    }
+
+    &-title {
+
+      &:after {
+        content: '';
+        display: block;
+        width: 60px;
+        height: 3px;
+        background: $main-color;
+        @include adaptiv-margin-top(50, 15);
+      }
+    }
+
+    &-button {
+      @include adaptiv-margin-top(50, 20);
+      border: 3px solid $main-color;
+      color: $main-color;
+
+      &:hover, &:focus {
+        background: transparent;
+        color: #f38181;
+        border: 3px solid #f38181;
+      }
+    }
+
+    @media screen and (max-width: 768px) {
+      top: 70%;
+      left: 50%;
+      transform: translate(-50%, -70%);
+    }
+  }
+
+
+  .slick-dots {
+    max-width: 1210px;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    padding: 0 20px;
+    text-align: start;
+    margin-left: auto;
+    margin-right: auto;
+    @include adaptiv-margin-top(-70, -40);
+
+    li {
+      border-top: 5px solid rgba(241, 241, 241, 0.5);
+      max-width: 25%;
+      width: 100%;
+      transition: .3s ease-in-out;
+      font-family: 'Montserrat', sans-serif;
+      position: static;
+      margin: 0;
+
+      p {
+        color: $main-color;
+        text-transform: uppercase;
+        @include adaptiv-margin-top(10, 0);
+        @include adaptiv-font(18, 10);
+        @include adaptiv-line-height(22, 12);
+
+      }
+
+      strong {
+        @include adaptiv-font(24, 14);
+        @include adaptiv-line-height(29, 20);
+        margin-right: 5px;
+      }
+
+      &:not(:last-child) {
+        margin-right: 25px;
+      }
+
+      &.slick-active {
+        border-top: 5px solid rgba(241, 241, 241, 1);
+
+        &:after {
+          content: '';
+          position: absolute;
+          top: 0%;
+          border-top: 5px solid #f38181;
+          width: 5%;
+          z-index: 5;
+        }
+      }
+
+    }
+  }
+}

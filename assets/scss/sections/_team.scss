@@ -1,0 +1,95 @@
+.team {
+  &__all {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 20px;
+    @media screen and (max-width: 1024px) {
+      grid-template-columns: repeat(2, 1fr);
+
+    }
+    @media screen and (max-width: 768px) {
+      grid-template-columns: repeat(1, 1fr);
+      justify-items: center;
+    }
+  }
+
+  &__item {
+    width: 100%;
+    max-width: 380px;
+    @media screen and (max-width: 1024px) {
+      max-width: 481px;
+    }
+  }
+
+  &__inner {
+
+    background: $sub-color;
+    @include adaptiv-margin-bottom(20, 10);
+
+    &:hover {
+      .team__img {
+        transform: translate3d(-10px, -10px, 0);
+
+        img {
+          opacity: .1;
+
+        }
+      }
+
+      .team__socials {
+        opacity: 1;
+      }
+    }
+  }
+
+  &__img {
+    background: linear-gradient(to bottom, #f38181, #fce38a);
+    transition: transform .3s linear;
+    height: 100%;
+    max-height: 470px;
+    @media screen and (max-width: 1024px) {
+      max-height: 602px;
+    }
+
+    img {
+      transition: opacity .3s linear;
+    }
+
+  }
+
+  &__socials {
+    opacity: 0;
+    transition: opacity .3s linear;
+  }
+
+  &__social {
+    width: 55px;
+    height: 55px;
+    background: #fce38a;
+    border-right: 1px solid #f38181;
+    color: #f38181;
+    font-size: 25px;
+    text-decoration: none;
+    transition: background .3s linear, color .3s linear;
+
+    &:last-child {
+      border-right: none;
+    }
+
+    &:hover {
+      color: white;
+      text-decoration: none;
+      background: #f38181;
+    }
+  }
+
+  &__profession {
+    font-size: 15px;
+    font-weight: 300;
+    text-transform: capitalize;
+    margin-top: 5px;
+  }
+  &__button{
+    @include adaptiv-margin-top(30,15);
+  }
+}

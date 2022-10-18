@@ -1,0 +1,39 @@
+.section-header {
+  width: 100%;
+  max-width: 984px;
+  text-align: center;
+  @include adaptiv-margin-bottom(91.5, 40);
+}
+
+.section-subtitle {
+  font-family: 'Kaushan Script', cursive;
+  @include adaptiv-font(24, 20);
+  @include adaptiv-line-height(25, 20);
+  @include adaptiv-margin-bottom(10, 10);
+}
+
+.section-title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  text-transform: uppercase;
+  font-weight: 700;
+  @include adaptiv-font(30, 25);
+  @include adaptiv-line-height(37, 32);
+  @include adaptiv-margin-bottom(38.5, 20);
+  @include adaptiv-padding-bottom(40,20);
+
+  &:after {
+    position: absolute;
+    content: '';
+    height: 3px;
+    width: 60px;
+    background: #F38181;
+    bottom: 0;
+  }
+}
+
+.text-center {
+  text-align: center;
+}
